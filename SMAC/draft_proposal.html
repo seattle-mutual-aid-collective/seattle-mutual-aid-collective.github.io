@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAC-Hub: Seattle Mutual Aid Collective</title>
+    <style>
+        :root {
+            --primary-color: #3a7563;
+            --secondary-color: #f7b267;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --accent-color: #f25c54;
+            --light-accent: #edf6f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .intro {
+            background-color: var(--light-accent);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .workshop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .workshop-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .workshop-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .workshop-card h4 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .hub-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .workshop-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .intro {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SEATTLE MUTUAL AID COLLECTIVE</div>
+        <h1>SMAC-Hub: Emergency Communications and Resilience Hub</h1>
+    </header>
+    
+    <section class="intro">
+        <p>The City of Seattle recognizes the need for community-led resilience initiatives that strengthen connections between neighbors and communities. The Seattle Office of Emergency Management and the Department of Neighborhoods support active development of new projects establishing Community Emergency Hubs for short-term crisis response and Resilience Hubs for long-term organization of community wellbeing.</p>
+        
+        <p>The Seattle Mutual Aid Collective is a community organization working on enhancing local resilience efforts and strengthening support networks for vulnerable community members. We are a queer and trans-operated group focusing on delivering mutual aid connections and resources to socially vulnerable individuals who face barriers in accessing neighborhood resilience resources due to geographic, social, or economic isolation.</p>
+    </section>
+    
+    <section>
+        <h2>Project Description</h2>
+        
+        <p>This proposal seeks funding from the Neighborhood Matching Fund for a comprehensive Emergency Communications and Resilience Workshop Series, with practical skills, training and resources that will be put to concrete use through the establishment of complementary Community Emergency Communications and Resilience Hubs.</p>
+        
+        <p>Our project addresses a critical community need by creating resilience pathways both within neighborhoods and across Seattle's diverse communities. By strengthening connections between isolated individuals and established neighborhood structures, we build a more robust citywide emergency response network that leaves no one behind.</p>
+        
+        <p>We are supported by community interest and engagement, with 10 volunteers pledging their time and expertise to this proposal. These community members bring diverse skills in emergency preparedness, communications technology, and community organizing.</p>
+    </section>
+    
+    <section>
+        <h2>Seattle Mutual Aid Collective Resilience Workshop Series</h2>
+        
+        <p>Our core programming consists of a workshop series designed to build practical skills and distribute essential resources:</p>
+        
+        <div class="workshop-container">
+            <div class="workshop-card">
+                <h4>Emergency First Aid Training</h4>
+                <ul>
+                    <li>First aid training with the Office of Emergency Management's Stop-the-Bleed program</li>
+                    <li>Distribution of essential first aid supplies to underserved neighbors</li>
+                </ul>
+            </div>
+            
+            <div class="workshop-card">
+                <h4>Emergency Preparedness Workshops</h4>
+                <ul>
+                    <li>Emergency kit and go-bag workshop with Pipsqueak Community Space</li>
+                    <li>Community emergency planning and household resiliency preparation</li>
+                    <li>Distribution of emergency supply kits and go-bag supplies to individuals and households with limited resources</li>
+                </ul>
+            </div>
+            
+            <div class="workshop-card">
+                <h4>Communications Resilience Training</h4>
+                <ul>
+                    <li>Radio training workshop with Punks in the Park</li>
+                    <li>Distribution of handheld battery-operated radios to enhance community preparedness</li>
+                    <li>"Power Down Field Exercise": Coordination with Seattle Emergency Communication Hubs and the Auxiliary Communication Service to practice communications when standard systems fail</li>
+                </ul>
+            </div>
+            
+            <div class="workshop-card">
+                <h4>Climate Adaptation and Food Security</h4>
+                <ul>
+                    <li>Climate change reality, resilience and adaptation workshop with Oceanography PhD, Dr. Mora Groussman</li>
+                    <li>Community gardening workshop by SMAC Seed Collective</li>
+                    <li>Promotion of hyperlocal food security solutions</li>
+                    <li>Contribution to diversity of local seed bank</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p>All workshops will include targeted outreach to vulnerable and underserved communities who often face challenges accessing standard neighborhood-based resilience efforts.</p>
+    </section>
+    
+    <div class="hub-section">
+        <h2>Establishment of Community Emergency Communications Hub</h2>
+        
+        <p>Building on the workshop series, we will establish a formal Community Emergency Communications Hub in partnership with volunteers from the /dev/hack collective:</p>
+        
+        <ul>
+            <li>Registration with the Seattle Emergency Hubs network</li>
+            <li>Training and organization for a core of dedicated volunteers</li>
+            <li>Coordination and practice with the citywide Seattle Emergency Hubs network</li>
+            <li>Creation of bridge connections between individuals and neighborhood-based hubs</li>
+        </ul>
+    </div>
+    
+    <div class="hub-section">
+        <h2>Establishment of Community Resilience Hub</h2>
+        
+        <p>Complementing the Communications Hub, we will develop a longer-term Community Resilience Hub:</p>
+        
+        <ul>
+            <li>Implementation following City and State guidelines for creating interconnected Resilience Hubs</li>
+            <li>Development of a website featuring publicly accessible educational resources, training materials, and community workshop information in English and Spanish translations</li>
+            <li>Resource directory specifically designed for vulnerable neighbors who may not be connected to traditional neighborhood networks</li>
+            <li>Ongoing support structure to maintain connections between emergency events</li>
+        </ul>
+        
+        <p>By focusing both on emergency communications and long-term resilience, this project creates multiple pathways for community members to engage with emergency preparedness while strengthening the social fabric that supports vulnerable populations before, during, and after crisis events.</p>
+    </div>
+    
+    <footer>
+        <p>© 2025 Seattle Mutual Aid Collective | A queer-operated community organization</p>
+    </footer>
+</body>
+</html>

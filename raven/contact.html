@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAVEN: Radio Access & Volunteer Emergency Networks</title>
+    <style>
+        :root {
+            --raven-obsidian: #1C2331;       /* Deep midnight wing-feather black */
+            --radio-wave-cyan: #4ECDC4;      /* Transmission frequency green-blue */
+            --seattle-mist-grey: #8C9EAB;    /* Puget Sound maritime grey */
+            --circuit-background: #0D1117;   /* Deep technological depth */
+            --corvid-iridescence: #5C7AEA;   /* Raven's luminescent blue-purple */
+            --signal-pulse: #FF6B6B;         /* Emergency transmission red */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inconsolata', 'Space Mono', monospace;
+            background-color: var(--circuit-background);
+            color: var(--seattle-mist-grey);
+            line-height: 1.618;
+            background-image: 
+                linear-gradient(135deg, 
+                    rgba(78,205,196,0.05) 0%, 
+                    rgba(92,122,234,0.05) 100%
+                );
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background-color: rgba(28, 35, 56, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--corvid-iridescence);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--radio-wave-cyan);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--seattle-mist-grey);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--radio-wave-cyan);
+        }
+
+        .hero {
+            padding: 8rem 0 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(28, 35, 56, 0.8) 0%, 
+                    rgba(12, 17, 23, 0.9) 100%
+                );
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: var(--radio-wave-cyan);
+        }
+
+        .hero h1 span {
+            color: var(--signal-pulse);
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .systemic-introduction {
+            background-color: rgba(28, 35, 56, 0.5);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .systemic-introduction p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: var(--raven-obsidian);
+            color: var(--seattle-mist-grey);
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--corvid-iridescence);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">RAVEN</a>
+            <nav>
+                <ul>
+                    <li><a href="project_description.html">Project Description</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="partners.html">Community Partners</a></li>
+                    <li><a href="work_plan.html">Work Plan</a></li>
+                    <li><a href="match.html">Match</a></li>
+                    <li><a href="budget.html">Budget</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+  <h1>Contact Us</h1>
+  <p>We'd love to hear from you! Whether you have questions, feedback, or want to get involved, feel free to reach out using the information below.</p>
+  
+  <section>
+    <h2>General Inquiries</h2>
+    <p><strong>Email:</strong> <a href="mailto:SMAC@caphillcommunity.org">SMAC at caphillcommunity dot org</a></p>
+  </section>
+
+    <footer>
+        <div class="container">
+            <p>Seattle Mutual Aid Collective 2025 RAVEN</p>
+        </div>
+    </footer>
+</body>
+</html>

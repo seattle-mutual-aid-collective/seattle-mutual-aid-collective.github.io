@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAVEN: Radio Access & Volunteer Emergency Networks</title>
+    <meta name="description" content="RAVEN Communications Resilience Hub - Project budget, expenses, and community match information">
+    <title>RAVEN Communications Resilience Hub - Budget</title>
     <style>
         :root {
             --raven-obsidian: #1C2331;       /* Deep midnight wing-feather black */
@@ -21,7 +22,7 @@
         }
 
         body {
-            font-family: 'Inconsolata', 'Space Mono', monospace;
+            font-family: monospace, system-ui, sans-serif;
             background-color: var(--circuit-background);
             color: var(--seattle-mist-grey);
             line-height: 1.618;
@@ -83,57 +84,132 @@
             color: var(--radio-wave-cyan);
         }
 
-        .hero {
-            padding: 8rem 0 6rem;
+        .page-title {
+            padding: 6rem 0 3rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            background-color: rgba(28, 35, 56, 0.7);
+            border-bottom: 1px solid var(--corvid-iridescence);
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(28, 35, 56, 0.8) 0%, 
-                    rgba(12, 17, 23, 0.9) 100%
-                );
-            z-index: -1;
+        .page-title h1 {
+            font-size: 2.5rem;
+            color: var(--radio-wave-cyan);
+            margin-bottom: 1rem;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .section-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            color: var(--radio-wave-cyan);
             margin-bottom: 1.5rem;
-            font-weight: 800;
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--corvid-iridescence);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-content {
+            margin-bottom: 3rem;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Table Styles */
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            padding: 0.75rem;
+            border: 1px solid rgba(92, 122, 234, 0.3);
+            text-align: left;
+        }
+
+        .budget-table th {
+            background-color: rgba(28, 35, 56, 0.8);
+            color: var(--radio-wave-cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .budget-table tr:hover {
+            background-color: rgba(78, 205, 196, 0.1);
+        }
+
+        .budget-table tr.total-row {
+            background-color: rgba(28, 35, 56, 0.6);
+            font-weight: bold;
+            border-top: 2px solid var(--corvid-iridescence);
+        }
+
+        .budget-table tr.total-row td {
             color: var(--radio-wave-cyan);
         }
 
-        .hero h1 span {
-            color: var(--signal-pulse);
+        .amount-column {
+            text-align: right;
         }
 
-        .hero-description {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            opacity: 0.8;
+        .summary-table {
+            width: 100%;
+            max-width: 500px;
+            margin: 2rem 0;
+            border-collapse: collapse;
         }
 
-        .systemic-introduction {
-            background-color: rgba(28, 35, 56, 0.5);
-            padding: 4rem 0;
-            text-align: center;
+        .summary-table th,
+        .summary-table td {
+            padding: 0.75rem;
+            border: 1px solid rgba(92, 122, 234, 0.3);
         }
 
-        .systemic-introduction p {
-            max-width: 900px;
-            margin: 0 auto;
+        .summary-table th {
+            background-color: rgba(28, 35, 56, 0.8);
+            color: var(--radio-wave-cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        .summary-table td.amount {
+            text-align: right;
+        }
+
+        .summary-totals {
+            margin: 1.5rem 0;
             font-size: 1.1rem;
-            line-height: 1.8;
+            font-weight: bold;
+            color: var(--radio-wave-cyan);
+        }
+
+        .highlight {
+            color: var(--radio-wave-cyan);
+            font-weight: bold;
+        }
+
+        .match-details {
+            background-color: rgba(28, 35, 56, 0.3);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
         }
 
         footer {
@@ -148,12 +224,12 @@
 <body>
     <header>
         <div class="container header-content">
-            <a href="index.html" class="logo">RAVEN</a>
-            <nav>
+            <a href="index.html" class="logo" aria-label="RAVEN Home">RAVEN</a>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="project_description.html">Project Description</a></li>
                     <li><a href="workshops.html">Workshops</a></li>
-                    <li><a href="partners.html">Community Partners</a></li>
+                    <li><a href="community_networks.html">Community Networks</a></li>
                     <li><a href="work_plan.html">Work Plan</a></li>
                     <li><a href="match.html">Match</a></li>
                     <li><a href="budget.html">Budget</a></li>
@@ -164,47 +240,138 @@
     </header>
 
     <main>
-        <table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Subtotal</th>
-      <th>%Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CROW Workshop material</td>
-      <td>$270</td>
-      <td>1.81</td>
-    </tr>
-    <tr>
-      <td>CROW: Emergency Prep kits</td>
-      <td>$7,571</td>
-      <td>50.70</td>
-    </tr>
-    <tr>
-      <td>CROW: Food</td>
-      <td>$2,590</td>
-      <td>17.35</td>
-    </tr>
-    <tr>
-      <td>RAVEN Communications Resilience Hub</td>
-      <td>$3,735</td>
-      <td>25.01</td>
-    </tr>
-    <tr>
-      <td>RAVEN emergency response kit</td>
-      <td>$766</td>
-      <td>5.13</td>
-    </tr>
-    <tr>
-      <td><strong>TOTAL MATERIALS & SUPPLIES</strong></td>
-      <td><strong>$14,932</strong></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+        <section class="page-title">
+            <div class="container">
+                <h1>Project Budget & Match</h1>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-container">
+                <div class="section-content">
+                    <h2 class="section-heading">Supplies and Materials Expenses</h2>
+                    <p>Our budget focuses on practical, direct community benefit through emergency preparedness supplies, communications equipment, and public engagement resources. All expenses are specifically aligned with our project goals of strengthening community resilience and bridging gaps in Seattle's emergency response network.</p>
+                    
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Supplies and Materials Expense Item</th>
+                                <th>Description</th>
+                                <th class="amount-column">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Resiliency Workshop Materials</td>
+                                <td>Workshop supplies; office materials, website hosting</td>
+                                <td class="amount-column">$330.00</td>
+                            </tr>
+                            <tr>
+                                <td>Household Emergency Prep Kits</td>
+                                <td>Materials and supplies for household emergency preparedness kits, first aid supplies</td>
+                                <td class="amount-column">$7,571.00</td>
+                            </tr>
+                            <tr>
+                                <td>Shelf-stable Food Supplies</td>
+                                <td>Shelf-stable food for household preparedness emergency kits</td>
+                                <td class="amount-column">$1,280.00</td>
+                            </tr>
+                            <tr>
+                                <td>Weekly community breakfasts</td>
+                                <td>Weekly community breakfast in Cal Anderson park for community outreach, public emergency planning workshops</td>
+                                <td class="amount-column">$1,800.00</td>
+                            </tr>
+                            <tr>
+                                <td>RAVEN Emergency Communications Hub</td>
+                                <td>Additional supplies and material for standard Hub Emergency Response Kit inventory, City Emergency Communications Hub radio equipment; handheld sets, FCC license upgrades, radio repeaters</td>
+                                <td class="amount-column">$4,501.00</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td colspan="2">Supplies and Materials Expenses Total</td>
+                                <td class="amount-column">$15,482.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3 class="section-heading">Budget Summary</h3>
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>Budget Category</th>
+                                <th class="amount-column">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Capital Expenses</td>
+                                <td class="amount">-</td>
+                            </tr>
+                            <tr>
+                                <td>Personnel Expenses</td>
+                                <td class="amount">-</td>
+                            </tr>
+                            <tr>
+                                <td>Professional Services Expenses</td>
+                                <td class="amount">-</td>
+                            </tr>
+                            <tr>
+                                <td>Supplies and Materials</td>
+                                <td class="amount">$15,482.00</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>Budget Total</td>
+                                <td class="amount">$15,482.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-content">
+                    <h2 class="section-heading">Community Match</h2>
+                    
+                    <div class="match-details">
+                        <p>Total Volunteer Hours: <span class="highlight">262</span></p>
+                        <p>Total Number of Pledged Volunteers: <span class="highlight">12</span> and growing</p>
+                        <p>Total Value of Time at $35/hr: <span class="highlight">$9,170</span></p>
+                    </div>
+                    
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>Match Category</th>
+                                <th class="amount-column">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cash Match</td>
+                                <td class="amount">$300.00</td>
+                            </tr>
+                            <tr>
+                                <td>Professional Services Match</td>
+                                <td class="amount">-</td>
+                            </tr>
+                            <tr>
+                                <td>Supplies and Materials Match</td>
+                                <td class="amount">-</td>
+                            </tr>
+                            <tr>
+                                <td>Volunteer Time Match</td>
+                                <td class="amount">$9,170.00</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>Community Match Total</td>
+                                <td class="amount">$9,470.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>Our community match reflects the strong community support for this project. With the required match being at least half of the funding request, our community match of $9,470.00 exceeds the requirement for our $15,482.00 budget by providing a match ratio of approximately 61%.</p>
+
+                    <p>The volunteer time represents committed hours from community members who will serve in various capacities from workshop facilitation to emergency communications training to community outreach. Each volunteer brings valuable skills that complement our project goals while demonstrating broad community investment in building resilience.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>

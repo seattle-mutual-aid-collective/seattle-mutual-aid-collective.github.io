@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAVEN: Radio Access & Volunteer Emergency Networks</title>
+    <meta name="description" content="RAVEN Communications Resilience Hub - Implementation readiness and phased work plan for establishing emergency communication networks">
+    <title>RAVEN Communications Resilience Hub - Work Plan</title>
     <style>
         :root {
             --raven-obsidian: #1C2331;       /* Deep midnight wing-feather black */
@@ -12,6 +13,10 @@
             --circuit-background: #0D1117;   /* Deep technological depth */
             --corvid-iridescence: #5C7AEA;   /* Raven's luminescent blue-purple */
             --signal-pulse: #FF6B6B;         /* Emergency transmission red */
+            --phase-one: rgba(78, 205, 196, 0.1);    /* Phase 1 background */
+            --phase-two: rgba(92, 122, 234, 0.1);    /* Phase 2 background */
+            --phase-three: rgba(255, 107, 107, 0.1); /* Phase 3 background */
+            --phase-four: rgba(78, 205, 196, 0.15);  /* Phase 4 background */
         }
 
         * {
@@ -21,7 +26,7 @@
         }
 
         body {
-            font-family: 'Inconsolata', 'Space Mono', monospace;
+            font-family: monospace, system-ui, sans-serif;
             background-color: var(--circuit-background);
             color: var(--seattle-mist-grey);
             line-height: 1.618;
@@ -83,57 +88,128 @@
             color: var(--radio-wave-cyan);
         }
 
-        .hero {
-            padding: 8rem 0 6rem;
+        .page-title {
+            padding: 6rem 0 3rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            background-color: rgba(28, 35, 56, 0.7);
+            border-bottom: 1px solid var(--corvid-iridescence);
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(28, 35, 56, 0.8) 0%, 
-                    rgba(12, 17, 23, 0.9) 100%
-                );
-            z-index: -1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
+        .page-title h1 {
+            font-size: 2.5rem;
             color: var(--radio-wave-cyan);
+            margin-bottom: 1rem;
         }
 
-        .hero h1 span {
-            color: var(--signal-pulse);
-        }
-
-        .hero-description {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        .systemic-introduction {
-            background-color: rgba(28, 35, 56, 0.5);
+        .content-section {
             padding: 4rem 0;
-            text-align: center;
         }
 
-        .systemic-introduction p {
+        .section-container {
             max-width: 900px;
             margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
+        }
+
+        .section-heading {
+            color: var(--radio-wave-cyan);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--corvid-iridescence);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-content {
+            margin-bottom: 3rem;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .readiness-points {
+            margin: 1.5rem 0 2rem 1.5rem;
+        }
+
+        .readiness-points li {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 1.5em;
+        }
+
+        .readiness-points li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--radio-wave-cyan);
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: var(--radio-wave-cyan);
+            font-weight: bold;
+        }
+
+        .emphasis {
+            color: var(--signal-pulse);
+            font-style: italic;
+        }
+
+        /* Table Styles */
+        .work-plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .work-plan-table th,
+        .work-plan-table td {
+            padding: 0.75rem;
+            border: 1px solid rgba(92, 122, 234, 0.3);
+            text-align: left;
+        }
+
+        .work-plan-table th {
+            background-color: rgba(28, 35, 56, 0.8);
+            color: var(--radio-wave-cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .work-plan-table tr.phase-header {
+            background-color: rgba(28, 35, 56, 0.95);
+            color: var(--seattle-mist-grey);
+            font-weight: bold;
+        }
+
+        .work-plan-table tr.phase-header td {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .work-plan-table tr.phase-1 {
+            background-color: var(--phase-one);
+        }
+
+        .work-plan-table tr.phase-2 {
+            background-color: var(--phase-two);
+        }
+
+        .work-plan-table tr.phase-3 {
+            background-color: var(--phase-three);
+        }
+
+        .work-plan-table tr.phase-4 {
+            background-color: var(--phase-four);
+        }
+
+        .work-plan-table tr:hover:not(.phase-header) {
+            background-color: rgba(78, 205, 196, 0.2);
         }
 
         footer {
@@ -148,12 +224,12 @@
 <body>
     <header>
         <div class="container header-content">
-            <a href="index.html" class="logo">RAVEN</a>
-            <nav>
+            <a href="index.html" class="logo" aria-label="RAVEN Home">RAVEN</a>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="project_description.html">Project Description</a></li>
                     <li><a href="workshops.html">Workshops</a></li>
-                    <li><a href="partners.html">Community Partners</a></li>
+                    <li><a href="community_networks.html">Community Networks</a></li>
                     <li><a href="work_plan.html">Work Plan</a></li>
                     <li><a href="match.html">Match</a></li>
                     <li><a href="budget.html">Budget</a></li>
@@ -162,119 +238,142 @@
             </nav>
         </div>
     </header>
+
     <main>
-    <section class="hero">
-        <div class="container">
-            <h1>RAVEN Work Plan</h1>
-        </div>
-    </section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Step</th>
-                        <th>Activity</th>
-                        <th>Responsible Person / Group</th>
-                        <th>Month Done</th>
-                        <th>Year Done</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Finalize project planning, timeline, and budget allocation</td>
-                        <td>Mora Groussman (Project Coordinator), N (Fiscal Manager)</td>
-                        <td>5 - May</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Establish formal partnership agreements with /dev/hack/ workspace and other community partners</td>
-                        <td>(Resource Coordinator)</td>
-                        <td>5 - May</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Curate workshop curricula and training materials for all four workshop components</td>
-                        <td>(Education Coordinator)</td>
-                        <td>6 - June</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Create and launch project website with educational resources in English and Spanish</td>
-                        <td>(Technology Director)</td>
-                        <td>6 - June</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Recruit and train volunteer instructors and assistants for workshop series</td>
-                        <td>(Volunteer Coordinator) & (Outreach Coordinator)</td>
-                        <td>6 - June</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Conduct targeted outreach to vulnerable communities and gather registration for workshop series</td>
-                        <td>(Outreach Coordinator)</td>
-                        <td>6 - June</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Procure emergency supplies, communications equipment, and workshop materials</td>
-                        <td>(Resource Coordinator), (Fiscal Manager)</td>
-                        <td>6 - June</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Hold first round of Emergency First Aid and Emergency Preparedness workshops</td>
-                        <td>(Communications Lead)</td>
-                        <td>7 - July</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Register with Seattle Emergency Hubs network and conduct joint communications drill</td>
-                        <td>(Communications Lead)</td>
-                        <td>8 - August</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Hold Climate Adaptation and Food Security workshops</td>
-                        <td>(Climate Resilience Lead)</td>
-                        <td>8 - August</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Evaluate workshop series through participant feedback and implement improvements</td>
-                        <td></td>
-                        <td>9 - September</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>Develop ongoing volunteer staffing and operations plan for Communications Resilience Hub</td>
-                        <td></td>
-                        <td>9 - September</td>
-                        <td>2025</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>Create final project report and sustainability plan for continued operations</td>
-                        <td></td>
-                        <td>10 - October</td>
-                        <td>2025</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-</main>
+        <section class="page-title">
+            <div class="container">
+                <h1>Implementation Readiness & Work Plan</h1>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-container">
+                <div class="section-content">
+                    <h2 class="section-heading">Project Readiness</h2>
+                    <p>RAVEN is fully prepared to launch within 60 days of award notification. We've already completed critical pre-implementation work:</p>
+                    
+                    <ul class="readiness-points">
+                        <li>Established core partnerships with <span class="highlight">/dev/hack Collective</span> (secured workspace + technical support), <span class="highlight">Cal Anderson Park Alliance</span> (venue coordination), and <span class="highlight">Park Punk Pancakes</span> (community outreach co-hosting)</li>
+                        
+                        <li>Assembled a leadership team of 8 members with defined roles and relevant expertise</li>
+                        
+                        <li>Developed workshop themes for emergency communications, radio training and operations, and neighborhood resilience planning</li>
+                        
+                        <li>Identified 15+ committed volunteers with specific skill sets aligned to project needs</li>
+                        
+                        <li>5 team members already possess FCC Technician licenses or higher, with capacity to schedule additional volunteers for licensing exams throughout the project</li>
+                    </ul>
+                    
+                    <p>Our readiness is further evidenced by our phased implementation plan that follows the established Hub development model, beginning with core organization and progressing through training, community engagement, and long-term sustainability.</p>
+                </div>
+
+                <div class="section-content">
+                    <h2 class="section-heading">Work Plan</h2>
+                    <p>Our implementation follows four phases based on the Seattle Emergency Hub development model:</p>
+                    
+                    <table class="work-plan-table">
+                        <thead>
+                            <tr>
+                                <th>Step</th>
+                                <th>Activity</th>
+                                <th>Responsible Person/Group</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="phase-header">
+                                <td colspan="3">Phase 1: Commitment & Starter Steps (May 2025)</td>
+                            </tr>
+                            <tr class="phase-1">
+                                <td>1</td>
+                                <td>Finalize Hub organizational structure, confirming roles and responsibilities</td>
+                                <td>Project Coordinator, Leadership Committee</td>
+                            </tr>
+                            <tr class="phase-1">
+                                <td>2</td>
+                                <td>Formalize partnership agreements with all key partners</td>
+                                <td>Project Coordinator, Fiscal Manager</td>
+                            </tr>
+                            <tr class="phase-1">
+                                <td>3</td>
+                                <td>Complete site assessments at Cal Anderson Park and /dev/hack space</td>
+                                <td>Technology Director, Resource Coordinator</td>
+                            </tr>
+                            
+                            <tr class="phase-header">
+                                <td colspan="3">Phase 2: Decision Making & Practice (June 2025)</td>
+                            </tr>
+                            <tr class="phase-2">
+                                <td>4</td>
+                                <td>Procure and inventory all equipment and supplies</td>
+                                <td>Resource Coordinator, Fiscal Manager</td>
+                            </tr>
+                            <tr class="phase-2">
+                                <td>5</td>
+                                <td>Develop communication protocols and emergency response procedures</td>
+                                <td>Technology Director, Emergency Planning Coordinator</td>
+                            </tr>
+                            <tr class="phase-2">
+                                <td>6</td>
+                                <td>Complete volunteer recruitment and initial training</td>
+                                <td>Volunteer Coordinator, Outreach Coordinator</td>
+                            </tr>
+                            <tr class="phase-2">
+                                <td>7</td>
+                                <td>Create and launch project website with educational resources in English and Spanish</td>
+                                <td>Technology Director, Outreach Coordinator</td>
+                            </tr>
+                            
+                            <tr class="phase-header">
+                                <td colspan="3">Phase 3: Training & Community Engagement (July-August 2025)</td>
+                            </tr>
+                            <tr class="phase-3">
+                                <td>8</td>
+                                <td>Launch workshop series with community participation</td>
+                                <td>Project Coordinator, Emergency Planning Coordinator</td>
+                            </tr>
+                            <tr class="phase-3">
+                                <td>9</td>
+                                <td>Register with Seattle Emergency Hubs network</td>
+                                <td>Project Coordinator, Technology Director</td>
+                            </tr>
+                            <tr class="phase-3">
+                                <td>10</td>
+                                <td>Conduct first communications drill with neighboring hubs</td>
+                                <td>Technology Director, Emergency Planning Coordinator</td>
+                            </tr>
+                            <tr class="phase-3">
+                                <td>11</td>
+                                <td>Host Climate Adaptation and Food Security workshops</td>
+                                <td>Resiliency Lead, Volunteer Coordinator</td>
+                            </tr>
+                            
+                            <tr class="phase-header">
+                                <td colspan="3">Phase 4: Sustainability Planning (September-October 2025)</td>
+                            </tr>
+                            <tr class="phase-4">
+                                <td>12</td>
+                                <td>Evaluate workshop effectiveness through participant feedback</td>
+                                <td>Project Coordinator, Outreach Coordinator</td>
+                            </tr>
+                            <tr class="phase-4">
+                                <td>13</td>
+                                <td>Develop long-term volunteer staffing plan</td>
+                                <td>Volunteer Coordinator, Project Coordinator</td>
+                            </tr>
+                            <tr class="phase-4">
+                                <td>14</td>
+                                <td>Create sustainability and maintenance plan for ongoing operations</td>
+                                <td>Resiliency Lead, Leadership Committee</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>This phased approach allows us to build the project systematically, establish strong community connections, and ensure long-term sustainability. Each phase builds on the previous one, creating a complete emergency communications hub that serves the community while strengthening Seattle's overall emergency preparedness network.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="container">
             <p>Seattle Mutual Aid Collective 2025 RAVEN</p>

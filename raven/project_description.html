@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAVEN: Radio Access & Volunteer Emergency Networks</title>
+    <meta name="description" content="RAVEN Communications Resilience Hub - Comprehensive project overview of Seattle's community-led emergency communications initiative">
+    <title>RAVEN Communications Resilience Hub - Project Description</title>
     <style>
         :root {
             --raven-obsidian: #1C2331;       /* Deep midnight wing-feather black */
@@ -21,7 +22,7 @@
         }
 
         body {
-            font-family: 'Inconsolata', 'Space Mono', monospace;
+            font-family: monospace, system-ui, sans-serif;
             background-color: var(--circuit-background);
             color: var(--seattle-mist-grey);
             line-height: 1.618;
@@ -83,57 +84,153 @@
             color: var(--radio-wave-cyan);
         }
 
-        .hero {
-            padding: 8rem 0 6rem;
+        .page-title {
+            padding: 6rem 0 3rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            background-color: rgba(28, 35, 56, 0.7);
+            border-bottom: 1px solid var(--corvid-iridescence);
         }
 
-        .hero::before {
+        .page-title h1 {
+            font-size: 2.5rem;
+            color: var(--radio-wave-cyan);
+            margin-bottom: 1rem;
+        }
+
+        .page-title p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .section-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            color: var(--radio-wave-cyan);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--corvid-iridescence);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-content {
+            margin-bottom: 3rem;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .key-points {
+            margin: 1.5rem 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .key-point {
+            background-color: rgba(28, 35, 56, 0.3);
+            border-radius: 4px;
+            padding: 1.5rem;
+            border-top: 3px solid var(--radio-wave-cyan);
+        }
+
+        .key-point-title {
+            color: var(--radio-wave-cyan);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .key-point-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
             content: '';
             position: absolute;
             top: 0;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(135deg, 
-                    rgba(28, 35, 56, 0.8) 0%, 
-                    rgba(12, 17, 23, 0.9) 100%
-                );
-            z-index: -1;
+            width: 2px;
+            background-color: rgba(92, 122, 234, 0.3);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
             margin-bottom: 1.5rem;
-            font-weight: 800;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--radio-wave-cyan);
+        }
+
+        .timeline-date {
+            font-weight: bold;
             color: var(--radio-wave-cyan);
+            margin-bottom: 0.5rem;
         }
 
-        .hero h1 span {
-            color: var(--signal-pulse);
+        .timeline-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        .hero-description {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            opacity: 0.8;
+        .bullet-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .systemic-introduction {
+        .bullet-list li {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
             background-color: rgba(28, 35, 56, 0.5);
-            padding: 4rem 0;
-            text-align: center;
+            border-left: 3px solid var(--radio-wave-cyan);
+            padding: 1.5rem;
+            margin: 2rem 0;
         }
 
-        .systemic-introduction p {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
+        .highlight-box h3 {
+            color: var(--radio-wave-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: var(--radio-wave-cyan);
+            font-weight: bold;
+        }
+
+        .emphasis {
+            color: var(--signal-pulse);
+            font-style: italic;
         }
 
         footer {
@@ -148,12 +245,12 @@
 <body>
     <header>
         <div class="container header-content">
-            <a href="index.html" class="logo">RAVEN</a>
-            <nav>
+            <a href="index.html" class="logo" aria-label="RAVEN Home">RAVEN</a>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="project_description.html">Project Description</a></li>
                     <li><a href="workshops.html">Workshops</a></li>
-                    <li><a href="partners.html">Community Partners</a></li>
+                    <li><a href="community_networks.html">Community Networks</a></li>
                     <li><a href="work_plan.html">Work Plan</a></li>
                     <li><a href="match.html">Match</a></li>
                     <li><a href="budget.html">Budget</a></li>
@@ -164,47 +261,143 @@
     </header>
 
     <main>
-    <section class="hero">
-        <div class="container">
-            <h1>Radio Access & <span>Volunteer</span> Emergency Networks</h1>
-            <p class="hero-description">
-                Seattle faces escalating disaster risks—from earthquakes and wildfires to cyberattacks and climate-driven heatwaves—that disproportionately harm marginalized communities. The Seattle Office of Emergency Management’s <em>2023 Strategic Plan</em> identifies gaps in equitable access to preparedness resources, particularly for LGBTQ+, BIPOC, disabled, and low-income residents. 
-                Over 30% of Seattle households lack emergency plans. RAVEN addresses these inequities by building a decentralized, community-led network of emergency communications and mutual aid, ensuring no one is left behind when crises strike.
-            </p>
-        </div>
-    </section>
-    <section class="systemic-introduction">
-        <div class="container">
-            <p>
-                RAVEN combines hands-on workshops, resource distribution, and volunteer-powered hubs to strengthen neighborhood resilience citywide. Led by LGBTQ+ organizers, this initiative bridges gaps between Seattle’s Emergency Hub Network and vulnerable communities through:
-            </p><br>
-            <p>
-                <strong>12 Free Skills-Building Workshops</strong><br>
-                - <strong>Emergency Preparedness</strong>: 4 workshops to help 100+ residents plan and build emergency kits/go-bags, with free supplies for low-income households.<br>
-                - <strong>Communications Resilience</strong>: 3 workshops (Basic Radio Operation, Mesh Networks, Neighborhood Planning) on basic emergency radio operation and coordination with volunteer radio groups. Provide 50 emergency radios to trained community radio operators.<br>
-                - <strong>First-aid training</strong>: 2 workshops to train ~24 people on first aid skills (First-Aid, De-escalation training) and supply first aid kits.<br>
-                - <strong>Climate Adaptation and Community Resilience</strong>: 1 workshop and weekly <strong>Emergency Response Plan Breakfasts</strong> at Cal Anderson Park (with Cal Anderson Park Alliance and Park Punk Pancakes) to foster community resiliency planning.
-            </p><br>
-            <p>
-                <strong>RAVEN Emergency Communications Hub</strong><br>
-                - Launch a volunteer-led hub registered with Seattle’s Emergency Network<br>
-                - Establish core team of 5 radio-licensed volunteers<br>
-                - Redundant communication tools (HAM radios, mesh Wi-Fi, additional licensing requirements).<br>
-                - A “bridge” team linking isolated individuals to city systems during outages.<br>
-                - Citywide drill coordinated with cross-district hubs.<br>
-                - Coordinate planning with Seattle Auxiliary Communications Service (Seattle ACS) and Seattle Emergency Hubs Network.
-            </p><br>
-            <p>
-                <strong>Resilience Resource Distribution</strong><br>
-                - Provide 250 preparedness guides with multilingual translations (English/Spanish/Vietnamese).<br>
-                - Creation of a digital resource directory.
-            </p><br>
-            <p>
-                A project initiated by the Seattle Mutual Aid Collective in partnership with /dev/hack Collective, RAVEN integrates with Seattle’s Emergency Hub Network while centering hyperlocal needs. By linking mutual aid with citywide infrastructure, RAVEN builds redundancy <em>and</em> equity in disaster response.
-            </p>
-        </div>
-    </section>
-</main>
+        <section class="page-title">
+            <div class="container">
+                <h1>RAVEN Project Description</h1>
+                <p>Connecting communities through emergency communications and resilience planning</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-container">
+                <div class="section-content">
+                    <h2 class="section-heading">Project Overview</h2>
+                    <p>RAVEN (Radio Access & Volunteer Emergency Networks) establishes a Seattle Emergency Communications Hub that builds cross-city resilience networks serving vulnerable populations. Led by Seattle Mutual Aid Collective with key partners, RAVEN creates resilience pathways through public engagement in radio communications, skills training, and resource sharing.</p>
+                    
+                    <p>Seattle faces escalating climate and disaster risks, yet the preparedness gap is substantial: nearly <span class="highlight">50% of Seattle's low-income households</span> lack emergency kits or plans, and over <span class="highlight">two-thirds of non-English speakers</span> report no disaster readiness strategy. These gaps create serious vulnerabilities in our community's resilience.</p>
+                    
+                    <p>RAVEN addresses these challenges by creating accessible entry points to emergency preparedness while establishing critical communications infrastructure that will serve the community during crises. Our approach connects existing city emergency systems with communities often left out of traditional preparedness networks.</p>
+                    
+                    <div class="key-points">
+                        <div class="key-point">
+                            <div class="key-point-title">Registered Emergency Communications Hub</div>
+                            <div class="key-point-content">
+                                RAVEN will establish a formal Seattle Emergency Communications Hub with specialized radio equipment and trained operators, creating a critical node in the city's disaster response network that ensures isolated communities maintain connection to vital resources and information.
+                            </div>
+                        </div>
+                        
+                        <div class="key-point">
+                            <div class="key-point-title">Comprehensive Workshop Series</div>
+                            <div class="key-point-content">
+                                Our free, accessible workshops will train 200+ residents in emergency communications, first aid, household preparedness, and climate adaptation. All activities are open to the public, with targeted outreach to communities often excluded from traditional emergency planning.
+                            </div>
+                        </div>
+                        
+                        <div class="key-point">
+                            <div class="key-point-title">Resource Distribution</div>
+                            <div class="key-point-content">
+                                RAVEN will distribute over 100 emergency kits to vulnerable households, with priority given to individuals who face barriers to acquiring these resources independently. These kits provide essential supplies for the immediate aftermath of a disaster.
+                            </div>
+                        </div>
+                        
+                        <div class="key-point">
+                            <div class="key-point-title">Community Engagement Hub</div>
+                            <div class="key-point-content">
+                                Weekly community breakfasts at Cal Anderson Park will combine emergency planning with relationship building, creating sustainable connections that transcend emergency situations and provide a consistent, low-barrier opportunity for community engagement.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <h2 class="section-heading">Community Partnerships</h2>
+                    <p>RAVEN is fundamentally community-driven, shaped by collaborative partnerships and designed to engage diverse participants from planning through implementation.</p>
+                    
+                    <p>Our core partnerships include:</p>
+                    
+                    <ul class="bullet-list">
+                        <li><span class="highlight">/dev/hack Community Space</span> – Providing indoor workshop space, technical equipment storage, and expertise for radio communications training. Their volunteer tech team will help facilitate radio licensing workshops.</li>
+                        
+                        <li><span class="highlight">Cal Anderson Park Alliance</span> – Collaborating on permitting for outdoor community events and supporting public outreach through their established neighborhood networks.</li>
+                        
+                        <li><span class="highlight">Park Punk Pancakes</span> – Co-hosting weekly community breakfasts at Cal Anderson Park, combining their established community food program with our emergency planning activities.</li>
+                    </ul>
+                    
+                    <p>By partnering with established community organizations, RAVEN leverages existing networks while creating new connections between previously disconnected groups. This approach builds on community strengths while addressing critical gaps in emergency preparedness infrastructure.</p>
+                </div>
+
+                <div class="section-content">
+                    <h2 class="section-heading">Implementation Timeline</h2>
+                    <p>RAVEN is fully prepared to launch within 60 days of award notification. We've already assembled a leadership team of 8 members with defined roles, identified 15+ committed volunteers, and secured preliminary partnerships. Five team members already possess FCC Technician licenses or higher, providing the technical foundation for our communications hub.</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Phase 1: Commitment & Starter Steps (May 2025)</div>
+                            <div class="timeline-content">
+                                <p>Finalizing organizational structure, formalizing partnerships, and completing site assessments at Cal Anderson Park and /dev/hack space.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">Phase 2: Decision Making & Practice (June 2025)</div>
+                            <div class="timeline-content">
+                                <p>Procuring equipment, developing communication protocols, completing volunteer recruitment and training, and launching our project website with bilingual resources.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">Phase 3: Training & Community Engagement (July-August 2025)</div>
+                            <div class="timeline-content">
+                                <p>Launching our workshop series, registering with Seattle Emergency Hubs network, conducting communications drills with neighboring hubs, and hosting community events.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">Phase 4: Sustainability Planning (September-October 2025)</div>
+                            <div class="timeline-content">
+                                <p>Evaluating workshop effectiveness, developing long-term volunteer staffing plans, and creating sustainability strategies for ongoing operations beyond the initial funding period.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>This phased approach follows the established Hub development model, allowing us to build the project systematically, establish strong community connections, and ensure long-term sustainability.</p>
+                </div>
+                
+                <div class="section-content">
+                    <h2 class="section-heading">Project Budget & Community Match</h2>
+                    <p>Our budget focuses on practical, direct community benefit through emergency preparedness supplies, communications equipment, and public engagement resources. The total project budget is <span class="highlight">$15,482.00</span>, allocated entirely to supplies and materials that will directly serve community members.</p>
+                    
+                    <p>Key budget elements include:</p>
+                    <ul class="bullet-list">
+                        <li>Household Emergency Prep Kits: $7,571.00</li>
+                        <li>RAVEN Emergency Communications Hub Equipment: $4,501.00</li>
+                        <li>Weekly Community Breakfasts: $1,800.00</li>
+                        <li>Shelf-stable Food Supplies: $1,280.00</li>
+                        <li>Workshop Materials: $330.00</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <h3>Community Match Commitment</h3>
+                        <p>Our project has secured a strong community match of <span class="highlight">$9,470.00</span>, representing approximately 61% of our requested budget. This includes:</p>
+                        <ul class="bullet-list">
+                            <li>262 volunteer hours from 12+ community members, valued at $9,170.00</li>
+                            <li>$300.00 in cash contributions from individual donors</li>
+                        </ul>
+                        <p>This substantial community match demonstrates the strong grassroots support for RAVEN and ensures a sustainable foundation for project implementation.</p>
+                    </div>
+                </div>
+                
+                <div class="section-content">
+                    <h2 class="section-heading">Community Impact</h2>
+                    <p>RAVEN integrates with Seattle's Emergency Hub Network while serving communities often excluded from traditional emergency preparedness resources. By linking mutual aid networks with citywide infrastructure, we create multiple pathways for participation while ensuring that emergency preparedness resources reach those who need them most.</p>
+                    
+                    <p>Our approach recognizes that effective emergency preparedness requires both individual households with adequate resources and strong community networks that can mobilize quickly during crises. RAVEN addresses both needs by distributing critical supplies while simultaneously building skills and relationships that strengthen community resilience.</p>
+                    
+                    <p>By establishing a new Seattle Emergency Communications Hub with particular attention to serving vulnerable populations, RAVEN enhances the city's overall emergency preparedness while ensuring that no community is left behind when disaster strikes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">

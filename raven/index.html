@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAVEN: Radio Access & Volunteer Emergency Networks</title>
+    <meta name="description" content="RAVEN Communications Resilience Hub - Building cross-city emergency networks serving vulnerable populations in Seattle">
+    <title>RAVEN Communications Resilience Hub</title>
     <style>
         :root {
             --raven-obsidian: #1C2331;       /* Deep midnight wing-feather black */
@@ -21,7 +22,7 @@
         }
 
         body {
-            font-family: 'Inconsolata', 'Space Mono', monospace;
+            font-family: monospace, system-ui, sans-serif;
             background-color: var(--circuit-background);
             color: var(--seattle-mist-grey);
             line-height: 1.618;
@@ -123,17 +124,39 @@
             opacity: 0.8;
         }
 
-        .systemic-introduction {
+        .mission-statement {
             background-color: rgba(28, 35, 56, 0.5);
             padding: 4rem 0;
             text-align: center;
         }
 
-        .systemic-introduction p {
+        .mission-statement p {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 1.5rem;
             font-size: 1.1rem;
             line-height: 1.8;
+            text-align: left;
+        }
+
+        .mission-highlights {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            list-style-position: inside;
+        }
+
+        .mission-highlights li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .mission-conclusion {
+            max-width: 900px;
+            margin: 1.5rem auto 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
         }
 
         footer {
@@ -148,8 +171,8 @@
 <body>
     <header>
         <div class="container header-content">
-            <a href="index.html" class="logo">RAVEN</a>
-            <nav>
+            <a href="index.html" class="logo" aria-label="RAVEN Home">RAVEN</a>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="project_description.html">Project Description</a></li>
                     <li><a href="workshops.html">Workshops</a></li>
@@ -168,21 +191,24 @@
             <div class="container">
                 <h1>Radio Access & <span>Volunteer</span> Emergency Networks</h1>
                 <p class="hero-description">
-                    Seattle faces escalating climate and disaster risks (earthquakes, wildfires), yet marginalized communities—including BIPOC, LGBTQ+, and low-income residents—are often excluded from preparedness networks. RAVEN (Radio Access & Volunteer Emergency Networks) addresses this gap through a citywide mutual aid initiative led by queer organizers.
+                    RAVEN (Radio Access & Volunteer Emergency Networks) establishes a Seattle Emergency Communications Hub that builds cross-city resilience networks serving vulnerable populations.
                 </p>
             </div>
         </section>
 
-        <section class="systemic-introduction">
+        <section class="mission-statement">
             <div class="container">
                 <p>
-                    We will:
-                    <ul>
-                        <p>Host <strong>12 free workshops</strong> (First Aid, Radio Communications, Climate Adaptation) reaching 200+ residents.<br><br>
-                        Distribute <strong>100 emergency radios/kits</strong> to vulnerable households.<br><br>
-                        Train volunteers to launch <strong>Emergency Communication Hubs</strong>, bridging isolated communities with city systems.<br><br></p>
-                    </ul>
-                    A project initiated by the Seattle Mutual Aid Collective in partnership with /dev/hack Collective, RAVEN integrates with Seattle’s Emergency Hub Network while centering hyperlocal needs. By linking mutual aid with citywide infrastructure, RAVEN builds redundancy <em>and</em> equity in disaster response.
+                    Led by Seattle Mutual Aid Collective with key partners, RAVEN will create resilience pathways by public engagement in radio communications, skills training, and resource sharing:
+                </p>
+                <ul class="mission-highlights">
+                    <li>Train 200+ residents through workshops on emergency communications and preparedness</li>
+                    <li>Distribute emergency kits to 100+ vulnerable households</li>
+                    <li>Integrate with Seattle's Emergency Hub Network while providing specialized communications expertise</li>
+                    <li>Co-host weekly community breakfasts at Cal Anderson Park combining emergency planning with relationship building</li>
+                </ul>
+                <p class="mission-conclusion">
+                    Seattle faces increasing climate and earthquake risks, yet half of low-income households lack emergency plans. By linking mutual aid networks with citywide infrastructure, RAVEN fosters individual preparation and robust community networks, ensuring no one is left behind.
                 </p>
             </div>
         </section>
